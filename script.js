@@ -40,7 +40,7 @@ function write() {
 }
 
 function db() {
-	document.getElementById("db").innerHTML += "<tr> <td>"+ games[matches][3] + "</td> <td>" + games[matches][0] + "</td><td>" + games[matches][1] + "</td> <td>" + games[matches][2] + "</td> <td>" + games[matches][4] + "</td></tr>";	
+	document.getElementById("db").innerHTML += "<tr> <td> <img src='assets/"+ games[matches][3] + ".jpg'> </td> <td>" + games[matches][0] + "</td><td>" + games[matches][1] + "</td> <td>" + games[matches][2] + "</td> <td>" + games[matches][4] + "</td></tr>";	
 }
 
 var random = function(min,max) {
@@ -160,18 +160,22 @@ function rankedGame() {
 
 
 function redditPost() {
-	reddit = ["reddit post about how OP " + heroes[random(0,109)] + " is", "reddit post about how overrated " + players[random(0,160)] + " is", "shoutout thread to " + players[random(0,160)], "reddit post asking for true solo queue", "reddit post asking for Pit Lord", "reddit post asking for the Axe immortal"];
+	reddit = ["reddit post about how OP " + heroes[random(0,109)] + " is", "reddit post flaming " + players[random(0,160)] + " is", "shoutout thread to " + players[random(0,160)], "reddit post asking for true solo queue", "reddit post asking for Pit Lord", "reddit post asking for the Axe immortal", "petition to remove Techies on reddit"];
 	if (random(0,1) === 0) {
 		var gain = random(10,5000)
 		karma += gain;
-		alert("You made a " + reddit[random(0,5)] + " and gained " + gain.toString() + " karma.");
+		alert("You made a " + reddit[random(0,6)] + " and gained " + gain.toString() + " karma.");
 	}
 	else {
 		var gain = random(10,5000)
 		karma -= gain;
-		alert("You made a " + reddit[random(0,5)] + " and lost " + gain.toString() + " karma.");
+		alert("You made a " + reddit[random(0,6)] + " and lost " + gain.toString() + " karma.");
 	}
 	write();
+}
+
+function twitch() {
+	alert("You watched " + players[random(0,160)] + "'s stream. He lost. (Morale decrease by 3)");
 }
 
 function calcKDA() {
